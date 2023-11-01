@@ -7,21 +7,48 @@ export class App extends Component {
     bad: 0,
   };
 
+  updateGoodClicks = () => {
+    this.setState(prevState => {
+      return {
+        good: prevState.good + 1,
+      };
+    });
+  };
+
+  updateNeutralClicks = () => {
+    this.setState(prevState => {
+      return {
+        neutral: prevState.neutral + 1,
+      };
+    });
+  };
+
+  updateBadClicks = () => {
+    this.setState(prevState => {
+      return {
+        bad: prevState.bad + 1,
+      };
+    });
+  };
+
 
   render() {
+    const { good, neutral, bad } = this.state;
+    // console.log(good);
+
     return (
       <section>
         <h1>Please leave feedback</h1>
         <div>
-          <button>Good</button>
-          <button>Neutral</button>
-          <button>Bad</button>
+          <button onClick={ this.updateGoodClicks}>Good</button>
+          <button onClick={ this.updateNeutralClicks}>Neutral</button>
+          <button onClick={ this.updateBadClicks}>Bad</button>
         </div>
         <div>
           <h2>Statistics</h2>
-          <p>Good: </p>
-          <p>Neutral: </p>
-          <p>Bad: </p>
+          <p>Good: {good}</p>
+          <p>Neutral: {neutral}</p>
+          <p>Bad: {bad}</p>
         </div>
       </section>
     )
