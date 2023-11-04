@@ -40,11 +40,11 @@ export class App extends Component {
     return (
       <>
         <Section title="Please leave feedback">
-          <FeedbackOptions options={Object.keys(this.state)} onLeaveFeedback={this.onLeaveFeedback} />
+          <FeedbackOptions options={Object.keys(this.state)} onLeaveFeedback={this.onLeaveFeedback}/>
         </Section>
 
         <Section title="Statistics">
-          <Statistics good={good} neutral={neutral} bad={bad} total={total} positivePercentage={positivePercentage}/>
+          {total ? (<Statistics good={good} neutral={neutral} bad={bad} total={total} positivePercentage={positivePercentage}/>) : ("There is no feedback")}
         </Section>
       </>
     )
