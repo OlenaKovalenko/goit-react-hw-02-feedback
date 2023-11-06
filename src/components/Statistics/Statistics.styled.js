@@ -6,8 +6,7 @@ export const StatisicsContainer = styled.div`
     gap: ${p => p.theme.spacing(2)};
     align-items: start;
     width: 220px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: ${p => p.theme.spacing(58)};
 
 `;
 
