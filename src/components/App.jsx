@@ -3,6 +3,7 @@ import { Statistics } from "./Statistics/Statistics";
 import { FeedbackOptions } from "./FeedbackOptions/FeedbackOptions";
 import { Section } from "./Section/Section";
 import { GlobalStyle } from "./GlobalStyle";
+import { Notification } from "./Notification/Notification";
 
 export class App extends Component {
   state = {
@@ -45,11 +46,7 @@ export class App extends Component {
         </Section>
 
         <Section title="Statistics">
-          {total ? (<Statistics good={good} neutral={neutral} bad={bad} total={total} positivePercentage={positivePercentage} />) : (<p style={{
-            color: "black",
-            fontSize: 24,
-            fontWeight: 400,
-          }}>There is no feedback</p>)}
+          {total ? (<Statistics good={good} neutral={neutral} bad={bad} total={total} positivePercentage={positivePercentage} />) : (<Notification message="There is no feedback" />)}
         </Section>
 
         <GlobalStyle />
